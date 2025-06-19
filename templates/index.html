@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>My App</h1>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <hr>
+    <div class="container">
+        <h2>Sentiment Analysis App</h2>
+        <form method="POST">
+            <textarea name="review" placeholder="Enter your review here..." required></textarea><br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        {% if sentiment %}
+            <div class="result">Predicted Sentiment: <strong>{{ sentiment }}</strong></div>
+        {% endif %}
+    </div>
 </body>
 </html>
