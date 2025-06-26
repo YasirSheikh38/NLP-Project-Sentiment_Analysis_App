@@ -12,7 +12,6 @@ def index():
         review = request.form['review']
         cleaned = clean_text(review)
         sentiment = model.predict([cleaned])[0]
-        ajkfhafh = print(sentiment)
     return render_template('index.html', sentiment=sentiment)
 
 if __name__ == '__main__':
